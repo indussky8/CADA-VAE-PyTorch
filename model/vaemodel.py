@@ -195,7 +195,7 @@ class Model(nn.Module):
 
         losses = []
 
-        self.dataloader = data.DataLoader(self.dataset,batch_size= self.batch_size,shuffle= True,drop_last=True)#,num_workers = 4)
+        self.dataloader = data.DataLoader(self.dataset(),batch_size= self.batch_size,shuffle= True,drop_last=True)#,num_workers = 4)
 
         self.dataset.novelclasses =self.dataset.novelclasses.long().cuda()
         self.dataset.seenclasses =self.dataset.seenclasses.long().cuda()
